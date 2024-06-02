@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Mayhem</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        #battle-grid-container {
+            display: flex;
+            flex-direction: column;
+        }
+        #battle-grid {
+            display: grid;
+            grid-template-columns: repeat(11, 30px);/* Extra column for row numbers*/
+            gap: 1px;
+            margin-right: 20px;
+        }
+        .row-label, .col-label {
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #battle-grid div {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border: 1px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #start-game {
+            background-color: green;
+            color: white;
+        }
+        #end-game {
+            background-color: red;
+            color: white;
+        }
+        #end-turn {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>THIS IS Monster Mayhem! DO YOU DARE TO PLAY IT?</h1>
+    <div id="game-container">
+        <div id="battle-grid-container">
+            <div id="battle-grid"></div>
+        </div>
+        <div id="controls">
+            <div id="player-details"></div>
+            <div id="game-summary"></div>
+            <button id="start-game" onclick="initiateNewGame()">Start Game</button>
+            <button id="end-game" onclick="concludeCurrentGame()">End Game</button>
+            <button id="end-turn" onclick="activeGame.finishTurn()">End Turn</button>
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
